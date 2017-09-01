@@ -7,7 +7,7 @@ works on simple maths equation
 ```sh
 1. dX/dT	=	sigma(Y-X)	=> dX	=	sigma(Y-X)*dT
 2. dY/dT	=	X(rho-Z)-Y	=> dY	=	(X(rho-Z)-Y)*dT
-3. dZ/dT	=	XY-beta(Z) =>  dZ	=	(XY-beta(Z))*dT
+3. dZ/dT	=	XY-beta(Z)  =>  dZ	=	(XY-beta(Z))*dT
 ```
 >x=x+dX
 >y=y+dY
