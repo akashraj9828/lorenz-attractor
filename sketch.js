@@ -27,19 +27,18 @@ var get_dT;			//var to store user inputted inital dt (time frame)
 
 var debugging=true;		//set true when testing
 var set_x_y_z=false;	//set true if want user input of inital x,y,z
-var shape_closed=true;	//set false if want to see orignal lorenz attractor
-
+var shape_closed;	//set false if want to see orignal lorenz attractor
+var makeRandom=true;
 
 var scale_slider;		//slider variable for scaling
 
 
 
 function setup() {			//setup function loads once only when webpage loads
-	createCanvas(windowWidth, windowHeight - 100);
-
-
+	createCanvas(windowWidth-20, windowHeight - 110);
 	background(51);		//sets background to gray 
 
+	shape_closed=createCheckbox("close");
 	if(!debugging){     //when not debugging takes input (sigma,rho,beta) from user
 	getSigma = prompt("Enter value for sigma:range(0,30)", 10);
 	getRho = prompt("Enter value for rho:range(0,99)", 28);
@@ -47,6 +46,21 @@ function setup() {			//setup function loads once only when webpage loads
 	sigma= parseFloat(getSigma);
 	rho= parseFloat(getRho);
 	beta= parseFloat(getBeta);
+	
+	}
+
+	if(makeRandom){
+		x=random(0,50);
+		y=random(0,50);
+		z=random(0,50);
+		dt=random(1)/100;
+		console.log(x);
+		console.log(y);
+		console.log(z);
+		console.log(dt);
+
+	}
+
 	if(set_x_y_z){		////takes inital coordinate input(x,y,z) from user
 		getX = prompt("Enter value for X:range(0,20)", 1);
 		getY = prompt("Enter value for Y:range(0,29)", 1);
@@ -58,15 +72,13 @@ function setup() {			//setup function loads once only when webpage loads
 		dt=parseFloat(get_dT);
 
 	}
-	}
-
 
 	console.log("sigma:" + sigma);  //you can see values of system varibles in console
 	console.log("rho:" + rho);
 	console.log("beta:" + beta);
 	
 
-	scale_slider = createSlider(0.1, 15, 5, 0.01); 	//creating slider
+	scale_slider = createSlider(0.01, 15, 5, 0.01); 	//creating slider
 	scale_slider.position(100,100)	
 }
 
@@ -121,7 +133,7 @@ function render_line() {		//function to draw line b/w all coordinates
 		vertex(px[j+10], py[j+10]);
 		vertex(px[j+11], py[j+11]);
 
-		if(shape_closed)
+		if(shape_closed.checked())
 		endShape(CLOSE);  	// **EXPERIMENTAL joins each 10th point to 1st point
 		else
 		endShape();			//end of drawing shape
