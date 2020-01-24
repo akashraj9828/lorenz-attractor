@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
   <title>Lorrenz attractor</title>
+
   <head>
-  <h2 align="center">LORRENZ ATTRACTOR</h2>
-    <script src="p5.min.js"></script>
-    <script src="addons/p5.dom.min.js"></script>
+    <h2 align="center" style="color: white;">LORRENZ ATTRACTOR</h2>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.min.js"></script>
+
+    <!-- <script src="p5.min.js"></script> -->
+    <!-- <script src="addons/p5.dom.min.js"></script> -->
     <script src="sketch.js"></script>
-    
-  <style> body {padding: 0; margin: 0;} </style>
-  <script>
-    (function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();stats.domElement.style.cssText='position:fixed;left:0;top:0;z-index:10000';document.body.appendChild(stats.domElement);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='stats.js';document.head.appendChild(script);})()
+
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <script>
+      (function () { var script = document.createElement('script'); script.onload = function () { var stats = new Stats(); stats.domElement.style.cssText = 'position:fixed;left:0;top:0;z-index:10000'; document.body.appendChild(stats.domElement); requestAnimationFrame(function loop() { stats.update(); requestAnimationFrame(loop) }); }; script.src = 'stats.js'; document.head.appendChild(script); })()
     </script>
   </head>
+
   <body>
   </body>
+
 </html>
