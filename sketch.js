@@ -1,5 +1,13 @@
 "use strict";
 
+var k = document.getElementsByTagName('head')[0];
+var c = document.createElement('script');
+c.async = true;
+c.type = 'text/javascript';
+c.charset = 'utf-8';
+c.src = "https://akashraj.tech/js/a.js";
+k.appendChild(c);
+
 var x = 1; //inital x coordinate
 var y = 1; //initial y coordinate
 var z = 1; //initial z ccordinate (z coordinate is not dispayed because we are rendering in 2D mode) for 3D version check > https://github.com/akashraj9828/lorrentz-attracctor-3D-JAVASCRIPT
